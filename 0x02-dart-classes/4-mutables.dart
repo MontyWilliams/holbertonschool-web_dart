@@ -1,0 +1,32 @@
+class Password {
+  String _password;
+
+  Password({String password = ''})
+      : _password =
+            password; //  ":" in a constructor is used to initialize class properties. It's called a "initializer list".
+
+  bool isValid() {
+    if (_password.length < 8 || _password.length > 16) {
+      return false;
+    }
+    if (!_password.contains(RegExp(r'[A-Z]'))) {
+      return false;
+    }
+    if (!_password.contains(RegExp(r'[a-z]'))) {
+      return false;
+    }
+    if (!_password.contains(RegExp(r'[0-9]'))) {
+      return false;
+    }
+    return true;
+  }
+
+  String get password => _password;
+
+  set password(String password) => _password = password;
+
+  @override
+  String toString() {
+    return 'Your Password is: $_password';
+  }
+}
