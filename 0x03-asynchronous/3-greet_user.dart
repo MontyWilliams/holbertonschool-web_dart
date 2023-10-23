@@ -18,7 +18,7 @@ Future<dynamic> loginUser() async {
       print('There is a user: true');
       return greetUser();
     } else {
-      print ('Ther is a user: false');
+      print ('There is a user: false');
       return 'wrong credentials';
     }
   } catch (e) {
